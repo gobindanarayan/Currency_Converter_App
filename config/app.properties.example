@@ -1,0 +1,9 @@
+# Copy to config/app.properties and add your own local database settings.
+# Keep credentials out of source control. Environment variables also work.
+api.base-url=https://api.frankfurter.dev/v2
+api.timeout-seconds=12
+# A missing database configuration does not stop offline conversions.
+db.url=jdbc:mysql://localhost:3306/currency_converter?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+db.user=currency_app
+# Set db.password in config/app.properties or use CURRENCY_DB_PASSWORD.
+db.password=

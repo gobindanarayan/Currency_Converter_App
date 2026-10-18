@@ -1,0 +1,6 @@
+# Local application settings (ignored by Git)
+target/
+.idea/
+*.iml
+.env
+config/*.properties

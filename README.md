@@ -4,11 +4,11 @@ A small desktop learning project for Apache NetBeans. It converts amounts with e
 
 ## Requirements
 
-- JDK 25 (recommended because this project targets Java 25), Apache NetBeans with Maven support, and Maven 3.9+ if running from a terminal.
+- JDK 21 or newer (this project targets Java 21 and also runs on Java 25), Apache NetBeans with Maven support, and Maven 3.9+ if running from a terminal.
 - MySQL 8.0+ for persistent history and saved currency selections. MySQL is optional for conversion itself.
 - Internet access only for the online rate mode and fetching a full currency list.
 
-The source only uses standard Swing and Java `HttpClient` (included since Java 11). Jackson parses JSON, and the MySQL Connector/J Maven dependency provides JDBC. If your school lab only has JDK 17 or 21, change `maven.compiler.release` and the compiler plugin's `<release>` in `pom.xml` to that installed version; the source itself uses no Java 25-only feature. Keep Maven dependencies unchanged unless your installed Maven/JDK combination requires another compatible release.
+The app uses standard Swing, Java `HttpClient`, Java records, Jackson for JSON parsing, and MySQL Connector/J for JDBC. Java records require Java 16 or newer; this project targets Java 21.
 
 ## Project structure
 
@@ -47,10 +47,10 @@ Do not commit actual credentials. If database settings are absent or MySQL is do
 
 1. Choose **File → Open Project** and select the folder containing `pom.xml`.
 2. Let Maven resolve the Jackson and MySQL Connector/J dependencies (requires Maven Central access the first time).
-3. Set the project Java platform to JDK 25 (or adjust both compiler release values as described above).
+3. Set the project Java platform to JDK 21 or newer.
 4. Run the project. `com.example.currencyconverter.Main` is configured as the entry point.
 
-You can also run from a terminal in the project folder:
+On Windows, you can double-click `run.bat` after dependencies are present in the local Maven cache. It compiles the source and opens the app. You can also run from a terminal in the project folder if Maven is installed:
 
 ```sh
 mvn clean compile
@@ -84,3 +84,5 @@ The app has not been designed as financial software. MySQL persistence depends o
 - Offline: disconnect from the internet, select manual mode, enter a positive rate, and convert.
 - Input errors: try a blank, zero, negative, or nonnumeric amount, then a blank/zero manual rate.
 - Database: with MySQL configured, make a conversion and confirm a row appears in `conversion_history`; restart and confirm history/selections return. Temporarily stop MySQL to check that the conversion still works while a warning explains history cannot be saved.
+
+

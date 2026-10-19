@@ -1,5 +1,5 @@
 CREATE DATABASE IF NOT EXISTS currency_converter CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE USER IF NOT EXISTS 'currency_app'@'localhost' IDENTIFIED BY 'replace_this_password';
+CREATE USER IF NOT EXISTS 'currency_app'@'localhost' IDENTIFIED BY 'CURRENCY_DB_PASSWORD';
 GRANT SELECT, INSERT, UPDATE ON currency_converter.* TO 'currency_app'@'localhost';
 FLUSH PRIVILEGES;
 USE currency_converter;

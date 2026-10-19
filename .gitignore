@@ -1,6 +1,10 @@
-# Local application settings (ignored by Git)
-target/
+# Local application settings and generated build files
+config/app.properties
+/target/
 .idea/
-*.iml
+nbproject/private/
+
+# Environment variables and secrets
 .env
-config/*.properties
+.env.*
+!.env.example

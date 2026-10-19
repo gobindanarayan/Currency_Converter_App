@@ -6,4 +6,4 @@ api.timeout-seconds=12
 db.url=jdbc:mysql://localhost:3306/currency_converter?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
 db.user=currency_app
 # Set db.password in config/app.properties or use CURRENCY_DB_PASSWORD.
-db.password=Gobi1234
+db.password=YOUR_ACTUAL_PASSWORD
